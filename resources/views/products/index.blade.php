@@ -10,13 +10,13 @@
                         <img style="width:100%" src="/storage/cover_images/{{$product->cover_image}}">
                     </div>
                     <div class="col-md-8 col-sm-8">
-                        <h3><a href="/posts/{{$product->id}}">{{$product->title}}</a></h3>
+                        <h3><a href="/products/{{$product->id}}">{{$product->title}}</a></h3>
                         <small>Written on {{$product->created_at}} by {{$product->user->name}}</small>
                     </div>
                 </div>
             </div>
         @endforeach
-        {{$product->links()}}
+        {{$products->links()}}
     @else
         <p>No products found</p>
     @endif

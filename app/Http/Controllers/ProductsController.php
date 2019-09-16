@@ -180,6 +180,6 @@ class ProductsController extends Controller
         }
         
         $product->delete();
-        return redirect('/posts')->with('success', 'Post Removed');
+        return redirect('/products')->with('success', 'Post Removed');
     }
 }

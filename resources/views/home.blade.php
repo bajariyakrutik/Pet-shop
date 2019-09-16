@@ -16,6 +16,10 @@
 
                     You are logged in!
                 </div>
+                <div class="panel-body">
+                <a href="/products/create" class="btn btn-default">Add New Product</a>
+                <a href="/products" class="btn btn-default">Display Products</a>
+                </div>
             </div>
         </div>
     </div>
