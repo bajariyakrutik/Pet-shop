@@ -16,7 +16,7 @@ class ProductsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth',['except'=>['index','show']]);
+        $this->middleware('auth',['except'=>['index','show','procat']]);
     }
     /**
      * Display a listing of the resource.
@@ -29,6 +29,18 @@ class ProductsController extends Controller
         return view('products.index')->with('products', $product);
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function procat(Request $request)
+    {
+        $category = $request->category;
+        $product = Product::where('category',$category)->paginate(10);
+        return view('products.index')->with('products', $product);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *

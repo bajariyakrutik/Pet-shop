@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/products" class="btn btn-default">Go Back</a>
+    <a href="/product/{{$products->category}}" class="btn btn-default">Go Back</a>
     <h1>{{$products->title}}</h1>
     <img style="width:100%" src="/storage/cover_images/{{$products->cover_image}}">
     <br><br>
