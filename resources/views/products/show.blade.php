@@ -9,7 +9,9 @@
         {!!$products->body!!}
     </div>
     <hr>
-    <small>Written on {{$products->created_at}} by {{$products->user->name}}</small>
+    <h1>Price: {{$products->price}}</h1>
+    <hr>
+    <a href="" class="btn btn-default">Add to Cart</a>
     <hr>
     @if(!Auth::guest())
         @if(Auth::user()->id == $products->user_id)

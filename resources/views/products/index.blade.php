@@ -11,7 +11,8 @@
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3><a href="/products/{{$product->id}}">{{$product->title}}</a></h3>
-                        <small>Written on {{$product->created_at}} by {{$product->user->name}}</small>
+                        <h4>Price: ${{$product->price}}</h4>
+                        <a href="" class="btn btn-default">Add to Cart</a>
                     </div>
                 </div>
             </div>
