@@ -13,8 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    @if(Auth::user()->isAdmin())
+                        Welcome Administrator!!
+                        </div>
+                        <div class="panel-body">
+                        <a href="/products/create" class="btn btn-default">Add New Product</a>
+                        <a href="/products" class="btn btn-default">Display Products</a>
+                        </div>
+                    @else
+                        You are logged in!
+                    @endif
                 </div>
             </div>
         </div>

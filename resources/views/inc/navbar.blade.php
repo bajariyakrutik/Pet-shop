@@ -40,7 +40,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/admin">Dashboard</a></li>
+                            <li><a href="/home">Dashboard</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

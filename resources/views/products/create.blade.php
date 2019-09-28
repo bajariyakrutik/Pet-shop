@@ -5,7 +5,14 @@
     {!! Form::open(['action' => 'ProductsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{Form::label('category', 'Category')}}
-            {{Form::text('category', '', ['class' => 'form-control', 'placeholder' => 'Category'])}}
+            {{Form::select('category', [
+                'Dog' => 'Dog',
+                'Cat' => 'Cat',
+                'Rabbit' => 'Rabbit',
+                'Bird' => 'Bird',
+                'Accessories' => 'Accessories',
+                'Food' => 'Food'
+                ], 'null', ['class' => 'form-control', 'placeholder' => 'Select Category'])}}
         </div>
         <div class="form-group">
             {{Form::label('title', 'Title')}}
