@@ -8,7 +8,7 @@
         <hr>
         <h1>Price: ${{$products->price}}</h1>
         <hr>
-        <a href="" class="btn btn-default">Add to Cart</a>
+        <a href="" class="btn btn-success">Add to Cart</a>
         <hr>
         <div>
             {!!$products->body!!}
