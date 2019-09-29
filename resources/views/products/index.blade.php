@@ -12,7 +12,11 @@
                     <div class="col-md-8 col-sm-8">
                         <h3><a href="/products/{{$product->id}}">{{$product->title}}</a></h3>
                         <h4>Price: ${{$product->price}}</h4>
-                        <a href="" class="btn btn-success">Add to Cart</a>
+                        {!! Form::open(['url' => '/cart-add', 'method' => 'POST']) !!}
+                        <input type="hidden" name="productId" value="{{$product->id}}">
+                        <input type="hidden" name="qty" value="1">
+                        <button type="submit" class="btn btn-success">Add to Cart</button>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

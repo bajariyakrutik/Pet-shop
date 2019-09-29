@@ -29,7 +29,7 @@
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
+                <li><a href="/cart-show"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Login</a></li>

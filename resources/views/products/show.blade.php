@@ -8,7 +8,11 @@
         <hr>
         <h1>Price: ${{$products->price}}</h1>
         <hr>
-        <a href="" class="btn btn-success">Add to Cart</a>
+        {!! Form::open(['url' => '/cart-add', 'method' => 'POST']) !!}
+        <input type="hidden" name="productId" value="{{$products->id}}">
+        <input type="hidden" name="qty" value="1">
+        <button type="submit" class="btn btn-success">Add to Cart</button>
+        {!! Form::close() !!}
         <hr>
         <div>
             {!!$products->body!!}

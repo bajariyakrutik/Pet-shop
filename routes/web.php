@@ -25,3 +25,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@admin')->middleware('is_admin')->name('admin');
+
+Route::post('/cart-add','CartsController@addToCart');
+Route::get('/cart-show','CartsController@cartShow');
+Route::post('/update-cart','CartsController@updateCart');
+Route::get('/delete-cart-product/{rowId}','CartsController@removeFromCart');
