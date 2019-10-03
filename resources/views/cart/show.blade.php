@@ -18,7 +18,6 @@
                             <tr>
                             <th>Remove Product</th>
                             <th>Sr No.</th>
-                            <th>Cover Image</th>
                             <th>Product Name</th>
                             <th>Product Quantity</th>
                             <th>Product Price</th>
@@ -36,10 +35,6 @@
                                         <a href="{{ url('/delete-cart-product/'.$cartProduct->rowId)}}" class="btn btn-danger">remove</a>
                                     </td>
                                     <td>{{ ++$i }}</td>
-                                    <td><img src="/storage/cover_images/{{$cartProduct->imgurl}}"></td>
-                                    <?php
-                                    echo $cartProduct->imgurl;
-                                    ?>
                                     <td>{{$cartProduct->name}}</td>
                                     <td>
                                         {!! Form::open(['url' => '/update-cart', 'method'=> 'POST']) !!}    
@@ -61,7 +56,7 @@
                         </tbody>
                     </table>
                     <h3 class="align-right">Total: ${{$subtotal}}</h3>
-                    <button type="submit" class="btn btn-success">Checkout</button>
+                    <a href="/payment"><button type="submit" class="btn btn-success">Proceed</button></a>
                 </div>
             </div>
         </div>

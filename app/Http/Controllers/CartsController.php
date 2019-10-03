@@ -17,18 +17,17 @@ class CartsController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function addToCart(Request $request)
     {
         $productId = $request->productId;
         $productById = Product::where('id',$productId)->first();
         Cart::add([
             'id' => $productId,
-            array('imgurl' => $productById->cover_image),
             'name' => $productById->title,
             'price' => $productById->price,
             'qty' => $request->qty
         ]);
-        //echo $productById->cover_image;
         return redirect('/cart-show')->with('status','Product added in cart.');
     }
 

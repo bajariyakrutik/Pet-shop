@@ -35,4 +35,11 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'instamojo' => [
+
+        'api_key'       => env('IM_API_KEY'),
+        'auth_token'    => env('IM_AUTH_TOKEN'),
+        'url'           => env('IM_URL'),
+    ],
+
 ];

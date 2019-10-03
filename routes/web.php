@@ -30,3 +30,10 @@ Route::post('/cart-add','CartsController@addToCart');
 Route::get('/cart-show','CartsController@cartShow');
 Route::post('/update-cart','CartsController@updateCart');
 Route::get('/delete-cart-product/{rowId}','CartsController@removeFromCart');
+
+Route::get('/payment','PaymentsController@index');
+Route::post('pay', 'PaymentsController@pay');
+Route::get('pay-success', 'PaymentsController@success');
+
+
+?>
