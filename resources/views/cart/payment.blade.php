@@ -26,7 +26,7 @@
     <div class="col-md-4 order-md-2 mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
-        <span class="badge badge-secondary badge-pill">3</span>
+        <span class="badge badge-secondary badge-pill"><?php $value = count($cartProducts); ?>{{$value}}</span>
       </h4>
       <ul class="list-group mb-3">
         <?php
@@ -71,7 +71,7 @@
 
         <div class="mb-3">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="Current Address" required>
+          <input type="text" class="form-control" name="address" id="address" placeholder="Current Address" required>
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
@@ -79,10 +79,10 @@
 
         <div class="row">
           <div class="col-md-5 mb-3">
-            <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required>
+            <label for="city">City</label>
+            <select class="custom-select d-block w-100" id="city" required>
               <option value="">Choose...</option>
-              <option>India</option>
+              <option>Mumbai</option>
             </select>
             <div class="invalid-feedback">
               Please select a valid country.

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Order;
 use Cart;
+use Auth;
 
 class PaymentsController extends Controller
 {
@@ -28,12 +30,21 @@ class PaymentsController extends Controller
                "purpose" => "Wagin Tails",
                "amount" => $request->amount,
                "buyer_name" => "$request->name",
-               "send_email" => true,
+               "send_email" => false,
                "email" => "$request->email",
                "phone" => "$request->phone",
-               "redirect_url" => "http://127.0.0.1:8000/pay-success"
+               "redirect_url" => "http://127.0.0.1:8000/pay-success",
+               "webhook" => "http://instamojo.com/webhook/"
                ));
-                
+
+               $order = new Order();
+               $cartProducts = Cart::Content();
+               $order->cart = serialize($cartProducts);
+               $order->address = $request->address;
+               $order->name = $request->name;
+               /* $order->payment_id = $payid; */
+               Auth::user()->orders()->save($order);
+
                header('Location: ' . $response['longurl']);
                exit();
        }catch (Exception $e) {
@@ -43,7 +54,6 @@ class PaymentsController extends Controller
     
     public function success(Request $request){
         try {
-    
            $api = new \Instamojo\Instamojo(
                config('services.instamojo.api_key'),
                config('services.instamojo.auth_token'),
@@ -60,6 +70,7 @@ class PaymentsController extends Controller
          }catch (\Exception $e) {
             dd('payment failed');
         }
-       dd($response);
-     }
+        Cart::destroy();
+        return redirect('/homepage')->with('success', 'Order Success !! You can continue to buy now !');
+    }
 }

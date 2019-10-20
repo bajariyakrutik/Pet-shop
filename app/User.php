@@ -33,4 +33,12 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->type === self::ADMIN_TYPE;
     }
+
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
+
+    public function orders(){
+        return $this->hasMany('App\Order');
+    }
 }

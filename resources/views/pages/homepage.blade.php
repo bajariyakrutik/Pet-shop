@@ -21,4 +21,22 @@
             <div class="p-5 col-md-4 col-sm-6 col-xs-12 bd-highlight"><a href="/product/Food"><img  class="img-thumbnail" src="img/food.jpg" alt="Loading"><p class="text-center">FOOD</p></a></div>
         </div>
     </div>
+
+@endsection
+
+@section('footer')
+<footer class="page-footer navbar-inverse font-small blue" style="position: relative; left: 0; bottom: 0; width:100%;">
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/">Wagin Tails</a>
+    <div class="container-fluid">
+      <p class="text-muted">
+        <a href="https://www.facebook.com" style="font-size:30px;" ><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.twitter.com" style="font-size:30px;" > <i class="fab fa-twitter-square"></i></a>
+        <a href="https://in.linkedin.com" style="font-size:30px;"> <i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/?hl=en"style="font-size:30px;">  <i class="fab fa-instagram"></i></a>
+        <a href="https://www.reddit.com"style="font-size:30px;">  <i class="fab fa-reddit"></i></a>
+      </p>
+    </div>
+  </div>
+</footer>    
 @endsection
