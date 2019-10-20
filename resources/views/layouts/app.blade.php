@@ -7,6 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 
     <title>Wagin Tails</title>
 
@@ -14,6 +15,7 @@
     @yield('link')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e8e2627bc1.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
@@ -22,6 +24,9 @@
         <div class="container">
             @include('inc.messages')
             @yield('content')
+        </div>
+        <div>
+            @include('inc.footer')
         </div>
     </div>
     
