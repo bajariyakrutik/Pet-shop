@@ -42,6 +42,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/home">Dashboard</a></li>
+                            <li><a href="/order">Orders</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -63,6 +64,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/home">Dashboard</a></li>
+                            <li><a href="/order">My Orders</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

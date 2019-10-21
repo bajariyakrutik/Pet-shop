@@ -27,7 +27,7 @@
 @section('footer')
 <footer class="page-footer navbar-inverse font-small blue" style="position: relative; left: 0; bottom: 0; width:100%;">
   <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/">Wagin Tails</a>
+    <a href="/">Wagin Tails</a>
     <div class="container-fluid">
       <p class="text-muted">
         <a href="https://www.facebook.com" style="font-size:30px;" ><i class="fab fa-facebook-square"></i></a>

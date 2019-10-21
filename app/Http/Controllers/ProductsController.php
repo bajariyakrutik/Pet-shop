@@ -120,7 +120,7 @@ class ProductsController extends Controller
         
         //Check if product exists before deleting
         if (!isset($product)){
-            return redirect('/products')->with('error', 'No Post Found');
+            return redirect('/products')->with('error', 'No Product Found');
         }
 
         // Check for correct user
@@ -201,6 +201,6 @@ class ProductsController extends Controller
         }
         
         $product->delete();
-        return redirect('/products')->with('success', 'Post Removed');
+        return redirect('/products')->with('success', 'Product Removed');
     }
 }

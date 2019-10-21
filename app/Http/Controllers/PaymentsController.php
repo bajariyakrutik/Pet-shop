@@ -33,17 +33,8 @@ class PaymentsController extends Controller
                "send_email" => false,
                "email" => "$request->email",
                "phone" => "$request->phone",
-               "redirect_url" => "http://127.0.0.1:8000/pay-success",
-               "webhook" => "http://instamojo.com/webhook/"
+               "redirect_url" => "http://pet.test/pay-success",
                ));
-
-               $order = new Order();
-               $cartProducts = Cart::Content();
-               $order->cart = serialize($cartProducts);
-               $order->address = $request->address;
-               $order->name = $request->name;
-               /* $order->payment_id = $payid; */
-               Auth::user()->orders()->save($order);
 
                header('Location: ' . $response['longurl']);
                exit();
@@ -67,9 +58,16 @@ class PaymentsController extends Controller
            } else if($response['payments'][0]['status'] != 'Credit') {
                 dd('payment failed');
            } 
-         }catch (\Exception $e) {
+        }catch (\Exception $e) {
             dd('payment failed');
         }
+        $order = new Order();
+        $cartProducts = Cart::Content();
+        $order->cart = $cartProducts;
+        $order->address = $request->address;
+        $order->name = $request->name;
+        /* $order->payment_id = $payid; */
+        Auth::user()->orders()->save($order);
         Cart::destroy();
         return redirect('/homepage')->with('success', 'Order Success !! You can continue to buy now !');
     }
