@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -28,12 +27,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    const ADMIN_TYPE = 'admin';
+    const DEFAULT_TYPE = 'default';
+
+    public function isAdmin(){
+        return $this->type === self::ADMIN_TYPE;
+    }
+
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
+
+    public function orders(){
+        return $this->hasMany('App\Order');
+    }
 }
