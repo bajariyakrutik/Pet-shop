@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3><a href="/products/{{$product->id}}">{{$product->title}}</a></h3>
-                        <h4>Price: ${{$product->price}}</h4>
+                        <h4>Price: ₹{{$product->price}}</h4>
                         {!! Form::open(['url' => '/cart-add', 'method' => 'POST']) !!}
                         <input type="hidden" name="productId" value="{{$product->id}}">
                         <input type="hidden" name="qty" value="1">

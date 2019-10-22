@@ -33,7 +33,7 @@ class PaymentsController extends Controller
                "send_email" => false,
                "email" => "$request->email",
                "phone" => "$request->phone",
-               "redirect_url" => "http://pet.test/pay-success",
+               "redirect_url" => "http://ec2-18-191-51-189.us-east-2.compute.amazonaws.com//pay-success",
                ));
 
                header('Location: ' . $response['longurl']);

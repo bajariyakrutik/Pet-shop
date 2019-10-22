@@ -6,7 +6,7 @@
         <img style="width:100%" src="/storage/cover_images/{{$products->cover_image}}">
         <br><br>
         <hr>
-        <h1>Price: ${{$products->price}}</h1>
+        <h1>Price: ₹{{$products->price}}</h1>
         <hr>
         {!! Form::open(['url' => '/cart-add', 'method' => 'POST']) !!}
         <input type="hidden" name="productId" value="{{$products->id}}">
