@@ -13,13 +13,44 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h3>Krutik Bajariya</h3><br>krutik.bajriya@somaiya.edu<hr>
-                    <h3>Pruthil Gandhi</h3><br>pruthil.g@somaiya.edu
+                    <h3>Krutik Bajariya</h3>
+                    <div id="krutik">
+                      <button type="button" class="btn-primary" onclick="loadDocKrutik()">Get Contact Details!</button>
+                    </div>
+                    <hr>
+                    <h3>Pruthil Gandhi</h3>
+                    <div id="pruthil">
+                      <button type="button" class="btn-primary" onclick="loadDocPruthil()">Get Contact Details!</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+  function loadDocKrutik() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("krutik").innerHTML =
+        this.responseText;
+      }
+    };
+    xhttp.open("GET", "krutik_contact_info.txt", true);
+    xhttp.send();
+  }
+  function loadDocPruthil() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("pruthil").innerHTML =
+        this.responseText;
+      }
+    };
+    xhttp.open("GET", "pruthil_contact_info.txt", true);
+    xhttp.send();
+  }
+</script>
 
 @endsection
 

@@ -59,7 +59,7 @@
                                 </tr>
                                 @foreach($orders as $order)
                                     <tr>
-                                        <td>{{unserialize($order->cart)}}</td>
+                                        <td>{{($order->cart)}}</td>
                                     </tr>
                                 @endforeach
                             </table>

@@ -41,12 +41,12 @@
             $total = ($cartProduct->price)*($cartProduct->qty);
             $subtotal = $subtotal + $total;
           ?>
-          <span class="text-muted">Rs {{$total}}</span>
+          <span class="text-muted">₹{{$total}}</span>
         </li>
         @endforeach
         <li class="list-group-item d-flex justify-content-between">
           <span>Total</span>
-          <strong>Rs {{$subtotal}}</strong>
+          <strong>₹{{$subtotal}}</strong>
         </li>
       </ul>
     </div>
